@@ -94,7 +94,7 @@ class SearchSettingsGenerator:
 
         # Write the search settings file to disk
         with search_settings_path.open("w", encoding="utf-8") as fd:
-            rtoml.dump(obj=search_settings, file=fd)
+            rtoml.dump(obj=search_settings, file=fd, none_value=None)
 
     def _index_output(self) -> bool:
         return self.input_options["base_directory"] == self.output_path
